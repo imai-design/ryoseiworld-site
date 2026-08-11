@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://imai-design.github.io/ryoseiworld-site/sitemap.xml

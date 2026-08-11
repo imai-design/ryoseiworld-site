@@ -3,9 +3,20 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="noindex,nofollow">
 <title>RYOSEIWORLD｜やりたくないことを、ITで無くす。</title>
 <meta name="description" content="RYOSEIWORLDは、今井涼晴の仕事の総合サイトです。やりたくないことを、ITで無くす。だから、ITは全て無料に。無料のホームページ制作から、日々のためのツールづくりまで。">
+<link rel="canonical" href="https://imai-design.github.io/ryoseiworld-site/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="RYOSEIWORLD">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:url" content="https://imai-design.github.io/ryoseiworld-site/">
+<meta property="og:title" content="RYOSEIWORLD｜やりたくないことを、ITで無くす。">
+<meta property="og:description" content="RYOSEIWORLDは、今井涼晴の仕事の総合サイトです。やりたくないことを、ITで無くす。だから、ITは全て無料に。無料のホームページ制作から、日々のためのツールづくりまで。">
+<meta property="og:image" content="https://imai-design.github.io/ryoseiworld-site/images/ogp.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="RYOSEIWORLD｜やりたくないことを、ITで無くす。">
+<meta name="twitter:description" content="RYOSEIWORLDは、今井涼晴の仕事の総合サイトです。やりたくないことを、ITで無くす。だから、ITは全て無料に。無料のホームページ制作から、日々のためのツールづくりまで。">
+<meta name="twitter:image" content="https://imai-design.github.io/ryoseiworld-site/images/ogp.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;500;600;800&family=Zen+Kaku+Gothic+New:wght@300;400;500;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -228,11 +239,11 @@
         <div class="form-row">
           <label>
             <span>お名前<em>*</em></span>
-            <input type="text" name="name" required>
+            <input type="text" name="name" autocomplete="name" required>
           </label>
           <label>
             <span>メールアドレス<em>*</em></span>
-            <input type="email" name="email" required>
+            <input type="email" name="email" autocomplete="email" required>
           </label>
         </div>
         <label class="full">
@@ -252,11 +263,11 @@
           <span>送信する</span>
           <svg width="18" height="18" viewBox="0 0 24 24"><path d="M4 12h16M14 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
         </button>
-        <p class="form-note" id="formNote"></p>
+        <p class="form-hint">送信ボタンを押すと、メールソフトが開きます。内容を確認してから送信してください。</p>
       </form>
 
       <div class="contact-info reveal">
-        <h4>MAIL</h4>
+        <h3>MAIL</h3>
         <p><a href="mailto:info@ryoseiworld.co.jp">info@ryoseiworld.co.jp</a></p>
       </div>
     </div>

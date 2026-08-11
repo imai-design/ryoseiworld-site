@@ -75,14 +75,38 @@
     link.addEventListener('click', closeMenu);
   });
 
-  // ---------- contact form (static, no real submission) ----------
+  // ---------- contact form (mailto — no backend, opens the user's mail app) ----------
+  const CONTACT_MAILTO_ADDRESS = 'info@ryoseiworld.co.jp';
   const contactForm = document.getElementById('contactForm');
-  const formNote = document.getElementById('formNote');
+
+  /**
+   * @param {FormData} formData
+   * @returns {string} a mailto: URL with subject/body pre-filled from the form
+   */
+  const buildContactMailtoUrl = (formData) => {
+    const name = formData.get('name') || '';
+    const email = formData.get('email') || '';
+    const topic = formData.get('topic') || '';
+    const message = formData.get('message') || '';
+
+    const subject = `お問い合わせ：${topic}`;
+    const body = [
+      `お名前: ${name}`,
+      `メールアドレス: ${email}`,
+      `ご相談内容: ${topic}`,
+      `お問い合わせ内容: ${message}`,
+    ].join('\r\n');
+
+    return `mailto:${CONTACT_MAILTO_ADDRESS}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  };
 
   contactForm?.addEventListener('submit', (event) => {
     event.preventDefault();
-    if (!formNote) return;
-    formNote.textContent = 'お問い合わせありがとうございます。メッセージを受け付けました。';
-    contactForm.reset();
+    if (!contactForm.checkValidity()) {
+      contactForm.reportValidity();
+      return;
+    }
+    const mailtoUrl = buildContactMailtoUrl(new FormData(contactForm));
+    window.location.href = mailtoUrl;
   });
 })();
